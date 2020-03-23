@@ -60,3 +60,15 @@ Recursion however can make code simpler than performing multiple lines of iterat
 
 Recursions limitations are also by the very size of the stack itself, say if a recusive method needed to called a trillion times, obviosuly the stack wouldn't be happy.
 There is a way around this using Tail Recurrsion, but all the algorithms featured don't use tail recurrsion. (Some languages such as Java don't even support tail recursion)
+
+
+# Assumption based algorithms
+
+So far all the previously explained algorithms:
+
+* Don't make assumptions about the data (String, Ints, etc.)
+* Don't assume that the data is bounded by any properties (IE: not negative, not a float)
+* Are based around comparisons
+
+ENTER ASSUMPTION BASED ALGORITHMS!
+
