@@ -39,7 +39,16 @@ Longest possible path from the root node to a leaf.
   Height = Root to Leaf
   
 ### Full Tree
-When every level is filled (Every node has 2 child nodes) including the last we conclude the tree is full.
+When every level is filled (Every node has 2 or 0 child nodes) including the last we conclude the tree is full.
 
 ### Complete Tree
-When every level is filled but the last level, (A node only has 1 or 0 children) We conclude the tree is complete.
+When every level is filled but the last level, (A node could have 1 child) We conclude the tree is complete.
+
+## Binary Search Trees
+
+Using a binary tree data struture we can use it to hold searchable data.
+
+By using a Binary tree:
+  * Insert, delete and retrieve are in O(n) time
+  * Left child is always smaller than parent node
+  * Right child is always bigger than parent node
