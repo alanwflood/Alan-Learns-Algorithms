@@ -1,6 +1,6 @@
 # B Trees
 
-A Set nodes interconnected to one another using a one way key system.
+A Set of nodes interconnected to one another using a one way key/path system.
 
 Every node has 0, 1 or 2 children (Thus Binary)
 Child  nodes are referred to as left or right child.
