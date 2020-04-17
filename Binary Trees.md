@@ -32,7 +32,7 @@ Path from the root to a specific node.
 Longest possible path from a node to the furthest leaf. Leaf nodes always have a height of 0.
 
 ### Tree height
-Long possible path from the root node to a leaf.
+Longest possible path from the root node to a leaf.
 
 **So:**
   Depth = Leaf to Root
