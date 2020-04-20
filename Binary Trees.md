@@ -81,6 +81,6 @@ If it has two children, we replace the value with that of the smallest value on 
 ### Traversing
 
 So there is 3 ways to traverse a binary tree:
-* In Order
-* Pre Order (Root First)
-* Post Order (Right Child First)
+(a) Inorder (Left, Root, Right) - Return values in sorted order
+(b) Preorder (Root, Left, Right) - Preorder traversal is used to create a copy of the tree. 
+(c) Postorder (Left, Right, Root) - Postorder traversal is used to delete the tree.
