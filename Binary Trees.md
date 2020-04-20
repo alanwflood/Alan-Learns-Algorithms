@@ -52,3 +52,35 @@ By using a Binary tree:
   * Insert, delete and retrieve are in O(n) time
   * Left child is always smaller than parent node
   * Right child is always bigger than parent node
+
+
+## Building a binary tree
+
+### Insertions:
+The logic to follow for insertions for Set Binary Tree (IE: no repeating values)
+If rootNode is null the new value is the root node.
+If value == data do nothing
+If value is less than the node value and the leftChild is null insert it otherwise rerun logic on leftChild node
+If value is greater than the node value and the rightChild is null insert it otherwise rerrun logic on rightChild node
+
+### Min Values
+Find the min is essentially just going down the left edges of the tree into you find a node with no left child.
+Then you know that's the smallest possible value in the tree
+
+### Max Values
+Likewise to find the max it's essentially the same as min but do the rightside edges and when you find a node with no right child you know it's the largest value in the tree.
+
+### Deleting value
+
+First we go down the left or right edges to find the required value to delete and treat that value and it's children as a subtree then:
+
+We replace the node to delete with it's left or right child if it has one child, or we simply delete it if it has none.
+
+If it has two children, we replace the value with that of the smallest value on the right side and then delete that same value from the subtree. So you're basically finding the min value then doing a copy and replace, then cleaning up afterwards
+
+### Traversing
+
+So there is 3 ways to traverse a binary tree:
+* In Order
+* Pre Order (Root First)
+* Post Order (Right Child First)
