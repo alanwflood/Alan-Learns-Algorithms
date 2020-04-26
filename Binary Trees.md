@@ -81,11 +81,22 @@ Look at the root node value compared to the value you're looking for, if greater
 ### Min Values
 
 Find the min is essentially just going down the left edges of the tree into you find a node with no left child.
-Then you know that's the smallest possible value in the tree
+Then you know that's the smallest possible value in the tree. This is done in O(h) time (h being the height of the tree) or simplified O(Log N)
 
 ### Max Values
 
 Likewise to find the max it's essentially the same as min but do the rightside edges and when you find a node with no right child you know it's the largest value in the tree.
+Same as Min it's O(h) time.
+
+### Counting values
+
+To find greater or less than amounts for an arbitrary value, we need to count subtree nodes. Ideally your implentation would have a subtree count on each node that get's inc/decremented on insertion.
+
+For an example, say we're looking for all the nodes smaller than a value.
+
+Before doing anything we can check the max of the subtree, if the max is smaller we know the whole subtree is smaller so sum the count of all nodes in the subtree.
+
+Then we look at the root, compare the root node with the value. If the value is greater, we sum the count of the left sub tree, and the root, and the start counting down nodes in the right subtree until we find a value smaller than it, then we additionally add the left children of that node to the count.
 
 ### Deleting value
 
@@ -93,7 +104,7 @@ First we go down the left or right edges to find the required value to delete an
 
 We replace the node to delete with it's left or right child if it has one child, or we simply delete it if it has none.
 
-If it has two children, we replace the value with that of the smallest value on the right side and then delete that same value from the subtree. So you're basically finding the min value then doing a copy and replace, then cleaning up afterwards
+If it has two children, we replace the value with that of the smallest value on the right side and then delete that same value from the subtree. So you're basically finding the min value in the subtree, doing a copy and replace, then cleaning up afterwards.
 
 ### Traversing
 
