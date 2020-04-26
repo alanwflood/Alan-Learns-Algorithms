@@ -1,6 +1,8 @@
 # Big O-Notation
 
-Used to describe time complexity of an algorithm
+Used to describe time complexity of an algorithm,
+
+we also use Omega(Ω) to describe lower bound and theta (Θ) to describe upper bound, Big O is used to describe the median between the two, so a high level overview of the timing complexity.
 
 ## Most used notations:
 
@@ -14,7 +16,6 @@ O(n2), quadratic
 O(nk), polynomial time
 O(2n), exponential
 O(n!), factorial
-
 
 And in English:
 
@@ -34,7 +35,7 @@ From the aspect of a Quick Sort (The sort with the pivot and splitting the array
 
 Best Case: If all elements are equal, quick sort will traverse the array only one O(n)
 Worse Case: If the pivot is repeatedly the largest element in the array it won't divide the array in half, it'll just shrink the subarray by one element O(n2)
-Expected Case: Generally the best case and worse case won't  be happening for the whole iteration so realistically O(n log n) will be the expected case.
+Expected Case: Generally the best case and worse case won't be happening for the whole iteration so realistically O(n log n) will be the expected case.
 
 ## Space Complexity
 
@@ -50,19 +51,20 @@ Stack space also counts so recurssive calls will be O(n) time, however simply ca
 
 Big O only describes rate of increase, not the actual time taken. O(n) could run faster than O(1) for specific inputs, for those reasons constants are dropped at run time.
 
-Code with 20 iterations could be considered O(20) compared to 20 iteations over two loops O(20*2)
+Code with 20 iterations could be considered O(20) compared to 20 iteations over two loops O(20\*2)
 
 The only way to measure accurately the performance would be to look at the actual machine code which is created from the code which is a helluva lot more complicated so we just drop the constants and say its O(n);
 
 ## When to add vs when to multiply
-When would time be O(a + b) vs O(a * b)
 
-* If your algorithm is in the form "do this, then when your done, do that", add the runtimes.
-* If your algorithm is in the form "do this for each time you do that", multiply the runtimes.
+When would time be O(a + b) vs O(a \* b)
+
+- If your algorithm is in the form "do this, then when your done, do that", add the runtimes.
+- If your algorithm is in the form "do this for each time you do that", multiply the runtimes.
 
 ## What is Log, and what is it representing.
 
-The idea is that an algorithm is O(log n) if instead of scrolling through a structure 1 by 1, you divide the structure in half over and over again and do a constant number of operations for each split. Search algorithms where the answer space keeps getting split are O(log n). 
+The idea is that an algorithm is O(log n) if instead of scrolling through a structure 1 by 1, you divide the structure in half over and over again and do a constant number of operations for each split. Search algorithms where the answer space keeps getting split are O(log n).
 
 Example: binary search, where you keep splitting an ordered array in half over and over again until you find the number.
 
@@ -79,3 +81,51 @@ If a function was to recurssively call itself twice, we'd at 1 to the exponent f
 The -1 comes from the initial call only being made once, as every other call is done twice.
 
 So when dealing with recursion go by O(branches^depth), ie: with two branches O(2n)
+
+# Examples of Big O times
+
+## O(1) time
+
+    Accessing Array Index (int a = ARR[5];)
+    Inserting a node in Linked List
+    Pushing and Poping on Stack
+    Insertion and Removal from Queue
+    Finding out the parent or left/right child of a node in a tree stored in Array
+    Jumping to Next/Previous element in Doubly Linked List
+
+## O(n) time
+
+In a nutshell, all Brute Force Algorithms, or Noob ones which require linearity, are based on O(n) time complexity
+
+    Traversing an array
+    Traversing a linked list
+    Linear Search
+    Deletion of a specific element in a Linked List (Not sorted)
+    Comparing two strings
+    Checking for Palindrome
+    Counting/Bucket Sort and here too you can find a million more such examples....
+
+## O(log n) time
+
+    Binary Search
+    Finding largest/smallest number in a binary search tree
+    Certain Divide and Conquer Algorithms based on Linear functionality
+    Calculating Fibonacci Numbers - Best Method The basic premise here is NOT using the complete data, and reducing the problem size with every iteration
+
+## O(n log n) time
+
+The factor of 'log n' is introduced by bringing into consideration Divide and Conquer. Some of these algorithms are the best optimized ones and used frequently.
+
+    Merge Sort
+    Heap Sort
+    Quick Sort
+    Certain Divide and Conquer Algorithms based on optimizing O(n^2) algorithms
+
+## O(n^2) time
+
+These ones are supposed to be the less efficient algorithms if their O(nlogn) counterparts are present. The general application may be Brute Force here.
+
+    Bubble Sort
+    Insertion Sort
+    Selection Sort
+    Traversing a simple 2D array
