@@ -47,11 +47,11 @@ Examples are: Merge Sort, Quick Sort, Insertion Sort, BSTs, AVLs, heaps.
 
 Time cost in this model is equal to the number of comparisons done.
 
-### Descision tree
+## Descision tree
 
-Any comparison algorithm can be viewd as a tree of all possible comparisons and their outcomes, and the resulting answer for any particular n values
+Any comparison algorithm can be viewed as a tree of all possible comparisons and their outcomes, and the resulting answer for any particular n values
 
-Using a binary tree as the algorithm/structre
+### Using a binary tree as the algorithm/structre for searching
 
 | Descision Tree | Algorithm |
 |................|...........|
@@ -61,11 +61,36 @@ Using a binary tree as the algorithm/structre
 | path length | running time |
 | height of tree | worse-case runtime |
 
-#### Searching Lower Bound:
+#### searching lower bound:
 
 - n preprocessed items
-- finding a given item among them in comparison model requires Ω(Log n) in worst case
+- finding a given item among them in comparison model requires ω(log n) in worst case
 
-#### Proof
+#### proof
 
-- Descion Tree is binary ad must have >= n leaves, one for each answer
+we justify binary search trees are good for this because:
+
+- descion tree is binary and must have >= n leaves, one for each answer
+- height >= log n
+
+### Now proving sorting in trees.
+
+#### searching lower bound:
+
+- decision tree is binary, number of leaves >= number of possible answers (n!)
+- Height >= log(n!) -> log(n(n - 1)(n -2)....1) -> log n + log(n-1) + .... + log2 + log1
+
+#### proof
+
+we justify binary search trees are good for this because:
+
+- descion tree is binary and must have >= n leaves, one for each answer
+- height >= log n
+
+## Linear Time Sorting
+
+Makes the presumption that you're only sorting integers.
+
+Asuume n keys sorting are intergers {0, 1.... k - 1}
+
+Can do a lot more than comparisons.
