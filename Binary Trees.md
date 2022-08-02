@@ -5,8 +5,8 @@ A Set of nodes interconnected to one another using a one way key/path system.
 Every node has 0, 1 or 2 children (Thus Binary)
 Child nodes are referred to as left or right child.
 
-A B Tree is **not** cyclical, you can only have a path fo downards to a node from the root node.
-A binary tree can only have **at most 2 child nodes per node**, it it's more it is not a valid binary tree.
+A B-Tree is **not** cyclical, you can only have a path downards to a node from the root node.
+A Binary tree can only have **at most 2 child nodes per node**, if it's more it is not a valid binary tree.
 
 They consist of roots, nodes, edges and leaves among other terminology.
 
@@ -128,32 +128,38 @@ We balance the tree by ensuring the ACL contract is managed during the insertion
 
 With a tree of shape:
 
-     41
-    /  \
-
-23 52
-\
- 31
+```
+   41
+  /  \
+ 23  52
+  \
+  31
+```
 
 On insertion of say 36, we have now voided the ACL contract, the left subtree is 3 while the right is 1.
 
 We would balance the tree by rotating the values from this:
 
-41
-/ \
+```
+  41
+ /  \
 23 52
-\
+ \
  31
-\
- 36
+  \
+  36
+```
 
 To this
 
-41
-/ \
-31 52
-/ \
-23 36
+```
+    41
+   /  \
+  31  52
+ /  \
+23  36
+
+```
 
 In the event that you can't rotate the tree, you can swap a child node with the parent and then do the rotation, this is known as a double rotation.
 

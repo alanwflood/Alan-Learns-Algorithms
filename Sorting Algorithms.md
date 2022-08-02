@@ -31,8 +31,7 @@ So 4 factorial:
 
 Comparing iterative to recursive functions:
 
-```
-
+```java
     public static int iterativeFactorial(int num) {
         // Safety case
         if (num == 0) return 1;
